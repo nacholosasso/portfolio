@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="stylesheet" href="styles.css?v=4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
@@ -78,12 +78,11 @@
                 </div>
             </div>
 
-            <div class="relative flex justify-center lg:justify-end">
-                <svg class="absolute -top-10 -left-6 w-[120%] max-w-md opacity-70 pointer-events-none" viewBox="0 0 320 160" fill="none" aria-hidden="true">
-                    <polyline points="4,120 50,95 90,130 135,60 180,85 225,30 270,55 316,12"
-                        class="signal-line" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
-                        style="color: var(--color-signal-deep)"></polyline>
-                    <circle class="signal-dot" cx="316" cy="12" r="6" fill="var(--color-signal-deep)"></circle>
+            <div class="flex flex-col items-center lg:items-end gap-4">
+                <svg class="w-36 sm:w-44 text-signal-deep dark:text-signal-dark opacity-90 pointer-events-none" viewBox="0 0 320 160" fill="none" aria-hidden="true">
+                    <polyline points="4,140 48,110 88,135 132,70 176,95 220,40 264,65 308,15"
+                        class="signal-line" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                    <circle class="signal-dot" cx="308" cy="15" r="10" fill="currentColor"></circle>
                 </svg>
                 <div class="relative inline-block rounded-2xl ring-4 ring-signal/20 dark:ring-signal-dark/20">
                     <img src="foto_perfil.jpg" alt="Ignacio Lo Sasso" width="320" height="320" fetchpriority="high" class="relative rounded-2xl w-64 h-64 lg:w-80 lg:h-80 object-cover aspect-square shadow-2xl">
