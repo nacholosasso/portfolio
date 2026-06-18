@@ -1,0 +1,107 @@
+@import "tailwindcss" source("../public");
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    /* Stone & ink (light mode) */
+    --color-paper: #EFEDE7;
+    --color-panel: #E3E0D7;
+    --color-line: #D2CDBE;
+    --color-ink: #16203A;
+    --color-ink-dim: #5B6478;
+    --color-signal: #0E8F7E;
+    --color-signal-deep: #0B6F62;
+
+    /* Navy & signal (dark mode) */
+    --color-bg-dark: #0E1320;
+    --color-panel-dark: #161C2C;
+    --color-line-dark: #2A3247;
+    --color-ink-dark: #E7E9F0;
+    --color-ink-dim-dark: #8C93A8;
+    --color-signal-dark: #2BD9C0;
+
+    --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+body {
+    font-family: var(--font-sans);
+}
+
+/* Signature: a line chart that draws itself once on load -------------- */
+
+.signal-line {
+    stroke-dasharray: 700;
+    stroke-dashoffset: 700;
+    animation: draw-signal 1.8s cubic-bezier(0.65, 0, 0.35, 1) 0.3s forwards;
+}
+@keyframes draw-signal {
+    to { stroke-dashoffset: 0; }
+}
+.signal-dot {
+    opacity: 0;
+    animation: pop-signal 0.4s ease-out 1.9s forwards;
+}
+@keyframes pop-signal {
+    from { opacity: 0; transform: scale(0); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: 0.3rem;
+    width: 14px;
+    height: 14px;
+    background-color: var(--color-signal-deep);
+    border-radius: 50%;
+}
+.dark .timeline-item::before {
+    background-color: var(--color-signal-dark);
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+.fade-in-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skill-bar-fill {
+    width: 0%;
+    transition: width 0.7s ease-out;
+}
+.skill-bar-fill.is-visible {
+    width: var(--skill-width);
+}
+
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+
+@media (prefers-reduced-motion: reduce) {
+    .fade-in-up {
+        transition: none;
+        transform: none;
+        opacity: 1;
+    }
+    .skill-bar-fill {
+        transition: none;
+    }
+    .signal-line {
+        animation: none;
+        stroke-dashoffset: 0;
+    }
+    .signal-dot {
+        animation: none;
+        opacity: 1;
+        transform: scale(1);
+    }
+    html.scroll-smooth {
+        scroll-behavior: auto;
+    }
+}

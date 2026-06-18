@@ -5,64 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dashboards interactivos de Ignacio Lo Sasso.">
     <meta name="keywords" content="Data Scientist, Data Analyst, Portfolio, Python, Power BI, Excel, Ignacio Lo Sasso, Dashboards">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
     <title>Dashboards | Ignacio Lo Sasso</title>
-    <script>
-        // Evitar el "flash" del modo incorrecto y aplicar el tema (oscuro/claro) lo antes posible
-        // Carga el tema desde localStorage. Por defecto es claro.
-        if (localStorage.getItem('color-theme') === 'dark') {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { darkMode: 'class' }</script>
+    <script src="theme-init.js?v=2"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="styles.css?v=2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-200">
+<body class="bg-paper text-ink dark:bg-bg-dark dark:text-ink-dark">
 
     <!-- Header -->
-    <header class="sticky top-0 w-full z-50 bg-white/95 dark:bg-slate-900/85 backdrop-blur-lg border-b border-slate-200 dark:border-slate-700">
+    <header class="sticky top-0 w-full z-50 bg-paper/95 dark:bg-bg-dark/90 backdrop-blur-lg border-b border-line dark:border-line-dark">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-bold tracking-tighter text-slate-800 dark:text-slate-200">ILS<span class="text-blue-600 dark:text-blue-500">.</span></a>
-            
+            <a href="index.html" class="font-display text-xl font-bold tracking-tight text-ink dark:text-ink-dark">ILS<span class="text-signal-deep dark:text-signal-dark">.</span></a>
+
             <div class="flex items-center">
                 <!-- Desktop Nav -->
-                <ul class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-widest text-slate-600 dark:text-slate-400">
-                    <li><a href="index.html#inicio" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Inicio</a></li>
-                    <li><a href="index.html#sobre-mi" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Sobre Mí</a></li>
-                    <li><a href="index.html#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Skills</a></li>
-                    <li><a href="index.html#proyectos" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Proyectos</a></li>
-                    <li><a href="dashboards.html" class="text-blue-600 dark:text-blue-500">Dashboards</a></li>
-                    <li><a href="index.html#contacto" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Contacto</a></li>
+                <ul class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-widest text-ink-dim dark:text-ink-dim-dark">
+                    <li><a href="index.html#inicio" class="hover:text-signal-deep dark:hover:text-signal-dark transition">Inicio</a></li>
+                    <li><a href="index.html#sobre-mi" class="hover:text-signal-deep dark:hover:text-signal-dark transition">Sobre Mí</a></li>
+                    <li><a href="index.html#skills" class="hover:text-signal-deep dark:hover:text-signal-dark transition">Skills</a></li>
+                    <li><a href="index.html#proyectos" class="hover:text-signal-deep dark:hover:text-signal-dark transition">Proyectos</a></li>
+                    <li><a href="dashboards.html" class="text-signal-deep dark:text-signal-dark">Dashboards</a></li>
+                    <li><a href="index.html#contacto" class="hover:text-signal-deep dark:hover:text-signal-dark transition">Contacto</a></li>
                 </ul>
 
                 <!-- Theme Toggle Button -->
-                <button id="theme-toggle" type="button" class="text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 focus:outline-none rounded-lg text-xl p-2 ml-4">
+                <button id="theme-toggle" type="button" aria-label="Cambiar entre modo claro y oscuro" class="text-ink-dim dark:text-ink-dim-dark hover:bg-panel dark:hover:bg-panel-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-signal dark:focus-visible:ring-signal-dark rounded-lg text-xl p-2 ml-4">
                     <i id="theme-toggle-dark-icon" class="fa-solid fa-moon"></i>
                     <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden"></i>
                 </button>
 
                 <!-- Mobile Menu Button -->
-                <button id="menu-btn" class="md:hidden text-slate-600 dark:text-slate-400 focus:outline-none ml-2" aria-label="Abrir menú">
+                <button id="menu-btn" class="md:hidden text-ink-dim dark:text-ink-dim-dark focus:outline-none ml-2" aria-label="Abrir menú">
                     <i class="fa-solid fa-bars text-2xl"></i>
                 </button>
             </div>
         </nav>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-6 py-4">
+        <div id="mobile-menu" class="hidden md:hidden bg-panel dark:bg-panel-dark border-b border-line dark:border-line-dark px-6 py-4">
             <ul class="flex flex-col space-y-4 font-medium">
-                <li><a href="index.html#inicio" class="block hover:text-blue-600 dark:hover:text-blue-400">Inicio</a></li>
-                <li><a href="index.html#sobre-mi" class="block hover:text-blue-600 dark:hover:text-blue-400">Sobre Mí</a></li>
-                <li><a href="index.html#skills" class="block hover:text-blue-600 dark:hover:text-blue-400">Skills</a></li>
-                <li><a href="index.html#proyectos" class="block hover:text-blue-600 dark:hover:text-blue-400">Proyectos</a></li>
-                <li><a href="dashboards.html" class="block text-blue-600 dark:text-blue-500">Dashboards</a></li>
-                <li><a href="index.html#contacto" class="block hover:text-blue-600 dark:hover:text-blue-400">Contacto</a></li>
+                <li><a href="index.html#inicio" class="block hover:text-signal-deep dark:hover:text-signal-dark">Inicio</a></li>
+                <li><a href="index.html#sobre-mi" class="block hover:text-signal-deep dark:hover:text-signal-dark">Sobre Mí</a></li>
+                <li><a href="index.html#skills" class="block hover:text-signal-deep dark:hover:text-signal-dark">Skills</a></li>
+                <li><a href="index.html#proyectos" class="block hover:text-signal-deep dark:hover:text-signal-dark">Proyectos</a></li>
+                <li><a href="dashboards.html" class="block text-signal-deep dark:text-signal-dark">Dashboards</a></li>
+                <li><a href="index.html#contacto" class="block hover:text-signal-deep dark:hover:text-signal-dark">Contacto</a></li>
             </ul>
         </div>
     </header>
@@ -70,25 +61,27 @@
     <main class="pt-24 pb-12 px-6">
         <section id="dashboards" class="py-10">
             <div class="container mx-auto px-6">
-                <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white leading-tight mb-16 text-center">
+                <p class="font-mono text-sm uppercase tracking-[0.2em] text-signal-deep dark:text-signal-dark text-center mb-4">Power BI &middot; Excel</p>
+                <h1 class="font-display text-4xl lg:text-5xl font-bold text-ink dark:text-ink-dark leading-tight mb-16 text-center">
                     Dashboards Interactivos
                 </h1>
 
                 <!-- Dashboard 1 -->
                 <div class="mb-20">
-                    <h2 class="text-2xl font-bold mb-8 text-center text-slate-800 dark:text-slate-200">Inflación, Dólar y Riesgo País</h2>
-                    <div class="max-w-5xl mx-auto bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 overflow-hidden">
+                    <h2 class="font-display text-2xl font-bold mb-8 text-center">Inflación, Dólar y Riesgo País</h2>
+                    <div class="max-w-5xl mx-auto bg-panel/40 dark:bg-panel-dark/40 rounded-2xl shadow-lg border border-line dark:border-line-dark overflow-hidden">
                         <div class="w-full h-[500px] md:h-[700px]">
-                            <iframe 
-                                width="100%" 
-                                height="100%" 
-                                frameborder="0" 
-                                scrolling="no" 
+                            <iframe
+                                title="Dashboard de Inflación, Dólar y Riesgo País"
+                                width="100%"
+                                height="100%"
+                                frameborder="0"
+                                scrolling="no"
                                 src="https://1drv.ms/x/c/8689d80e0e4c2a37/IQAptQUvTwbYRpRxOUTCixfqARxEDEFAaclIe2ysg_rJoD4?e=MmWKc3&action=embedview&wdbipreview=true">
                             </iframe>
                         </div>
-                        <div class="p-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-700 text-center">
-                            <a href="https://1drv.ms/x/c/8689d80e0e4c2a37/IQAptQUvTwbYRpRxOUTCixfqARxEDEFAaclIe2ysg_rJoD4?e=MmWKc3" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition">
+                        <div class="p-4 border-t border-line dark:border-line-dark text-center">
+                            <a href="https://1drv.ms/x/c/8689d80e0e4c2a37/IQAptQUvTwbYRpRxOUTCixfqARxEDEFAaclIe2ysg_rJoD4?e=MmWKc3" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-semibold text-signal-deep dark:text-signal-dark hover:text-ink dark:hover:text-ink-dark transition">
                                 Abrir en Excel Online <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
                             </a>
                         </div>
@@ -97,19 +90,21 @@
 
                 <!-- Dashboard 2 -->
                 <div class="mb-20">
-                    <h2 class="text-2xl font-bold mb-8 text-center text-slate-800 dark:text-slate-200">Análisis BTC y ETH</h2>
-                    <div class="max-w-5xl mx-auto bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 overflow-hidden">
+                    <h2 class="font-display text-2xl font-bold mb-8 text-center">Análisis BTC y ETH</h2>
+                    <div class="max-w-5xl mx-auto bg-panel/40 dark:bg-panel-dark/40 rounded-2xl shadow-lg border border-line dark:border-line-dark overflow-hidden">
                         <div class="w-full h-[500px] md:h-[700px]">
-                            <iframe 
-                                width="100%" 
-                                height="100%" 
-                                frameborder="0" 
-                                scrolling="no" 
+                            <iframe
+                                title="Dashboard de Análisis BTC y ETH"
+                                width="100%"
+                                height="100%"
+                                frameborder="0"
+                                scrolling="no"
+                                loading="lazy"
                                 src="https://1drv.ms/x/c/8689d80e0e4c2a37/IQAAjKMyg2bfRph8rmI9YifYAeJNVF9xUPDUjNIQ_ihhhqA?e=hq5ghi&action=embedview&wdbipreview=true">
                             </iframe>
                         </div>
-                        <div class="p-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-700 text-center">
-                            <a href="https://1drv.ms/x/c/8689d80e0e4c2a37/IQAAjKMyg2bfRph8rmI9YifYAeJNVF9xUPDUjNIQ_ihhhqA?e=hq5ghi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition">
+                        <div class="p-4 border-t border-line dark:border-line-dark text-center">
+                            <a href="https://1drv.ms/x/c/8689d80e0e4c2a37/IQAAjKMyg2bfRph8rmI9YifYAeJNVF9xUPDUjNIQ_ihhhqA?e=hq5ghi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-semibold text-signal-deep dark:text-signal-dark hover:text-ink dark:hover:text-ink-dark transition">
                                 Abrir en Excel Online <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
                             </a>
                         </div>
@@ -118,19 +113,21 @@
 
                 <!-- Dashboard 3 -->
                 <div>
-                    <h2 class="text-2xl font-bold mb-8 text-center text-slate-800 dark:text-slate-200">Plantel de Boca Juniors</h2>
-                    <div class="max-w-5xl mx-auto bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 overflow-hidden">
+                    <h2 class="font-display text-2xl font-bold mb-8 text-center">Plantel de Boca Juniors</h2>
+                    <div class="max-w-5xl mx-auto bg-panel/40 dark:bg-panel-dark/40 rounded-2xl shadow-lg border border-line dark:border-line-dark overflow-hidden">
                         <div class="w-full h-[500px] md:h-[700px]">
-                            <iframe 
-                                width="100%" 
-                                height="100%" 
-                                frameborder="0" 
-                                scrolling="no" 
+                            <iframe
+                                title="Dashboard del Plantel de Boca Juniors"
+                                width="100%"
+                                height="100%"
+                                frameborder="0"
+                                scrolling="no"
+                                loading="lazy"
                                 src="https://1drv.ms/x/c/8689d80e0e4c2a37/IQDOKotz-fOaQZ02XZhxS-6oAZnIQBR-reSKKaycvDdSkBE?e=6GOtyK&action=embedview&wdbipreview=true">
                             </iframe>
                         </div>
-                        <div class="p-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-700 text-center">
-                            <a href="https://1drv.ms/x/c/8689d80e0e4c2a37/IQDOKotz-fOaQZ02XZhxS-6oAZnIQBR-reSKKaycvDdSkBE?e=6GOtyK" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition">
+                        <div class="p-4 border-t border-line dark:border-line-dark text-center">
+                            <a href="https://1drv.ms/x/c/8689d80e0e4c2a37/IQDOKotz-fOaQZ02XZhxS-6oAZnIQBR-reSKKaycvDdSkBE?e=6GOtyK" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-semibold text-signal-deep dark:text-signal-dark hover:text-ink dark:hover:text-ink-dark transition">
                                 Abrir en Excel Online <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
                             </a>
                         </div>
@@ -142,79 +139,16 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-12 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700">
+    <footer class="py-12 border-t border-line dark:border-line-dark">
         <div class="container mx-auto px-6 text-center">
-            <div class="flex justify-center space-x-6 mb-8 text-2xl text-slate-400 dark:text-slate-500">
-                <a href="https://www.linkedin.com/in/ignacio-lo-sasso/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 dark:hover:text-blue-400 transition" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/nacholosasso/" target="_blank" rel="noopener noreferrer" class="hover:text-pink-600 dark:hover:text-pink-500 transition" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <div class="flex justify-center space-x-6 mb-8 text-2xl text-ink-dim dark:text-ink-dim-dark">
+                <a href="https://www.linkedin.com/in/ignacio-lo-sasso/" target="_blank" rel="noopener noreferrer" class="hover:text-signal-deep dark:hover:text-signal-dark transition" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/nacholosasso/" target="_blank" rel="noopener noreferrer" class="hover:text-signal-deep dark:hover:text-signal-dark transition" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
             </div>
-            <p class="text-slate-500 dark:text-slate-400 text-sm">©Ignacio Lo Sasso. Villa Urquiza, CABA (CP 1430).</p>
+            <p class="text-ink-dim dark:text-ink-dim-dark text-sm">©Ignacio Lo Sasso. Villa Urquiza, CABA (CP 1430).</p>
         </div>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = menuBtn.querySelector('i');
-
-        menuBtn.addEventListener('click', () => {
-            const isHidden = mobileMenu.classList.toggle('hidden');
-            menuIcon.classList.toggle('fa-bars', isHidden);
-            menuIcon.classList.toggle('fa-xmark', !isHidden);
-            menuBtn.setAttribute('aria-label', isHidden ? 'Abrir menú' : 'Cerrar menú');
-        });
-
-        // Cerrar menú al clickear link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                    menuIcon.classList.add('fa-bars');
-                    menuIcon.classList.remove('fa-xmark');
-                    menuBtn.setAttribute('aria-label', 'Abrir menú');
-                }
-            });
-        });
-
-        // Lógica para el modo oscuro
-        document.addEventListener('DOMContentLoaded', () => {
-            const themeToggleBtn = document.getElementById('theme-toggle');
-            const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-            const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-
-            // Cambiar íconos según el tema actual al cargar la página
-            if (document.documentElement.classList.contains('dark')) {
-                themeToggleLightIcon.classList.remove('hidden');
-                themeToggleDarkIcon.classList.add('hidden');
-            }
-
-            themeToggleBtn.addEventListener('click', function() {
-                // Intercambiar íconos
-                themeToggleDarkIcon.classList.toggle('hidden');
-                themeToggleLightIcon.classList.toggle('hidden');
-
-                // Si ya existe la preferencia en localStorage
-                if (localStorage.getItem('color-theme')) {
-                    if (localStorage.getItem('color-theme') === 'light') {
-                        document.documentElement.classList.add('dark');
-                        localStorage.setItem('color-theme', 'dark');
-                    } else {
-                        document.documentElement.classList.remove('dark');
-                        localStorage.setItem('color-theme', 'light');
-                    }
-                // Si no existe la preferencia en localStorage
-                } else {
-                    if (document.documentElement.classList.contains('dark')) {
-                        document.documentElement.classList.remove('dark');
-                        localStorage.setItem('color-theme', 'light');
-                    } else {
-                        document.documentElement.classList.add('dark');
-                        localStorage.setItem('color-theme', 'dark');
-                    }
-                }
-            });
-        });
-    </script>
+    <script src="site.js?v=2"></script>
 </body>
 </html>

@@ -1,0 +1,28 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Bienvenido al repositorio de mi portafolio personal. Soy Contador Público (UBA) especializado en Análisis de Datos y Control de Gestión.",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./public/styles.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./public/styles.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nacholosasso/portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nacholosasso/portfolio/issues"
+  },
+  "homepage": "https://github.com/nacholosasso/portfolio#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.1",
+    "sharp": "^0.35.1",
+    "tailwindcss": "^4.3.1"
+  }
+}
