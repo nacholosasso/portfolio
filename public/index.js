@@ -25,14 +25,6 @@ const proyectos = [
         tecnologias: ["Python", "NoSQL", "Cloud Run", "Firebase", "Docker"]
     },
     {
-        titulo: "Homenaje a Boca Juniors",
-        descripcion: "Proyecto web con palmarés, historia y el plantel en vivo actualizado automáticamente mediante integraciones de APIs deportivas y Google Cloud Scheduler.",
-        linkGithub: "https://github.com/nacholosasso/boca",
-        linkProyecto: "https://boca-497814.web.app/",
-        imagen: "bombonera.jpg",
-        tecnologias: ["JavaScript", "Node.js", "Cloud Run", "Docker", "Firebase"]
-    },
-    {
         titulo: "Ataque y Justicia",
         descripcion: "Plantel y armador de formaciones en tiempo real para mi equipo de fútbol 8 (F8), con datos de jugadores sincronizados desde Google Sheets, backend en Firestore y despliegue en Firebase Hosting para que todo el equipo vea las jugadas en vivo.",
         linkGithub: "https://github.com/nacholosasso/ataqueyjusticia",
