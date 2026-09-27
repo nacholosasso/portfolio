@@ -4,7 +4,7 @@ const proyectos = [
         titulo: "Portal de Noticias con IA",
         descripcion: "Arquitectura backend escalable en python, clasificación de noticias en tiempo real y almacenamiento eficiente en NoSQL.",
         linkGithub: "https://github.com/nacholosasso/noticias-ia",
-        linkProyecto: "https://info-noticias-ia.web.app/",
+        linkProyecto: "https://infoia.web.app/",
         imagen: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=70&w=600",
         tecnologias: ["Python", "NoSQL", "Cloud Run", "Docker", "Firebase"]
     },
