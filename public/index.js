@@ -1,28 +1,12 @@
 // Lógica de Proyectos
 const proyectos = [
     {
-        titulo: "Portal de Noticias con IA",
-        descripcion: "Arquitectura backend escalable en python, clasificación de noticias en tiempo real y almacenamiento eficiente en NoSQL.",
-        linkGithub: "https://github.com/nacholosasso/noticias-ia",
-        linkProyecto: "https://infoia.web.app/",
-        imagen: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=70&w=600",
-        tecnologias: ["Python", "NoSQL", "Cloud Run", "Docker", "Firebase"]
-    },
-    {
         titulo: "Contenido Personal de Cine",
         descripcion: "Contenido personal interactivo del mundo cine con integración de API Sheets y JavaScript y un diseño moderno enfocado en la experiencia de usuario.",
         linkGithub: "https://github.com/nacholosasso/peliculas",
         linkProyecto: "https://cineayn.web.app/",
         imagen: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=70&w=600",
         tecnologias: ["JavaScript", "API Sheets", "NoSQL", "Firebase"]
-    },
-    {
-        titulo: "Turnos Barberia",
-        descripcion: "Plataforma de reservas para barbería construida con backend en Python desplegado mediante contenedores en Google Cloud Run, almacenamiento en NoSQL y frontend en Firebase Hosting.",
-        linkGithub: "https://github.com/nacholosasso/turnos",
-        linkProyecto: "https://turnos-497423.web.app/",
-        imagen: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=70&w=600",
-        tecnologias: ["Python", "NoSQL", "Cloud Run", "Firebase", "Docker"]
     },
     {
         titulo: "Ataque y Justicia",
