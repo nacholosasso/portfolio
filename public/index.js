@@ -15,15 +15,6 @@ const proyectos = [
         linkProyecto: "https://ataqueyjusticia.web.app/",
         imagen: "https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=70&w=600",
         tecnologias: ["JavaScript", "Firestore", "API Sheets", "Firebase"]
-    },
-    {
-        titulo: "Práctica Python",
-        descripcion: "Repositorio personal de prácticas y ejercicios en Python. Aquí alojo los archivos .py sobre los diversos temas del curso.",
-        linkGithub: "https://github.com/nacholosasso/practica-python",
-        linkProyecto: "",
-        linkCurso: "https://www.youtube.com/playlist?list=PLyvsggKtwbLW1j0d5yaCkRF9Axpdlhsxz",
-        imagen: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&q=70&w=600",
-        tecnologias: ["Python"]
     }
 ];
 
