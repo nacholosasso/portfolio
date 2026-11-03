@@ -23,25 +23,15 @@ Herramientas: SQL, Python, DAX, , Power Query (Codigo M), Power BI, Power Automa
 
 Proyectos Destacados
 
-Sistema de turnos Barberia: Sistema de Turnos Serverless
-Plataforma de reservas para barbería construida con arquitectura 100% Serverless en AWS (S3, Lambda, DynamoDB y SES) y backend en Python.
-http://turnos-barberia-ls.s3-website-us-east-1.amazonaws.com/
-https://github.com/nacholosasso/turnos
-
-Portal de Noticias con IA
-Arquitectura backend escalable en python, clasificación de noticias en tiempo real y almacenamiento eficiente en NoSQL. (Google Cloud, Cloud Run, Firebase, Cloud Schedule)
-https://github.com/nacholosasso/noticias-ia
-https://info-noticias-ia.web.app/
-
 Contenido Personal de Cine
-Contenido personal interactivo del mundo cine con integración de API Sheets y JavaScript y un diseño moderno enfocado en la experiencia de usuario.
+Contenido personal interactivo del mundo cine con integración de API Sheets y JavaScript y un diseño moderno enfocado en la experiencia de usuario. (JavaScript, API Sheets, NoSQL, Firebase)
 https://github.com/nacholosasso/peliculas
-https://peliculas-ayn.web.app/
+https://cineayn.web.app/
 
-Práctica Python
-Repositorio personal de prácticas y ejercicios en Python. Aquí alojo los archivos .py sobre los diversos temas del curso.
-https://github.com/nacholosasso/practica-python
-https://www.youtube.com/playlist?list=PLyvsggKtwbLW1j0d5yaCkRF9Axpdlhsxz
+Ataque y Justicia
+Plantel y armador de formaciones en tiempo real para mi equipo de fútbol 8 (F8), con datos de jugadores sincronizados desde Google Sheets, backend en Firestore y despliegue en Firebase Hosting para que todo el equipo vea las jugadas en vivo. (JavaScript, Firestore, API Sheets, Firebase)
+https://github.com/nacholosasso/ataqueyjusticia
+https://ataqueyjusticia.web.app/
 
 
 💼 Experiencia Laboral
