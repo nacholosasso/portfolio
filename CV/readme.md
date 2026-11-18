@@ -75,6 +75,6 @@ RPA - Automatización de Bots.
 
 Análisis de Datos con Power BI.
 
-Power Automate Desktop (Microsoft).
+Power Automate (Microsoft).
 
 Inglés: Nivel A2 (Certificado Busuu).
